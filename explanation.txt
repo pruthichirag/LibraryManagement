@@ -1,0 +1,53 @@
+﻿In the code above, I have tried to create a program that :
+
+Uses fork() API to create a child process
+Uses a local and global variable to prove that fork creates a copy of the parent process and child has its own copy of variables to work on.
+Uses execv API to call ‘whoami’ command.
+Uses wait() API to get the termination status of child in the parent. Note that this API holds the execution of the parent until child terminates or changes its state.
+Now, when the above program is executed, it produces the following output :
+
+$ ./fork
+parent process!
+parent PID =  3184, child pid = 3185
+child process!
+child PID =  3185, parent pid = 3184
+
+child's local = 1, child's global = 1
+himanshu
+Child exit code: 0
+
+Parent'z local = 0, parent's  global = 0
+Parent says bye!
+
+
+-------------------*--------------------------------------------*_----------------------------------*_---------------------------------------*_-----------------------------------*_--------------------------------------*_------------------------------------------------------------
+
+The fork() Function
+
+As already discussed in the article creating a daemon process in C, the fork function is used to create a process from within a process.
+
+The resultant new process created by fork() is known as child process while the original process (from which fork() was called) becomes the parent process.
+
+The function fork() is called once (in the parent process) but it returns twice. Once it returns in the parent process while the second time it returns in the child process. Note that the order of execution of the parent and the child may vary depending upon the process scheduling algorithm. So we see that fork function is used in process creation.
+
+The signature of fork() is  :
+
+pid_t fork(void);
+The exec Family of Functions
+
+Another set of functions that are generally used for creating a process is the exec family of functions. These functions are mainly used where there is a requirement of running an existing binary from withing a process.
+
+For example, suppose we want to run the ‘whoami’ command from within a process, then in these kind of scenarios the exec() function or other members of this family is used. A point worth noting here is that with a call to any of the exec family of functions, the current process image is replaced by a new process image.
+
+A common member of this family is the execv() function. Its signature is :
+
+int execv(const char *path, char *const argv[]);
+Note: Please refer to the man-page of exec to have a look at the other members of this family.
+
+The wait() and waitpid() Functions
+
+There are certain situations where when a child process terminates or changes state then the parent process should come to know about the change of the state or termination status of the child process. In that case functions like wait() are used by the parent process where the parent can query the change in state of the child process using these functions.
+
+The signature of wait() is  :
+
+pid_t wait(int *status);

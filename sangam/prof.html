@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #660066;
+	font-size: 36px;
+	font-weight: bold;
+}
+.style2 {
+	color: #00CC00;
+	font-size: 16px;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#333333">
+<div align="center"><span class="style1">WELCOME TO THE LIBRARY, NMIT. </span></div>
+<p>&nbsp;</p>
+<table width="100%" height="369" border="0">
+  <tr>
+    <td width="24%" height="365" align="center" valign="top"><p align="left" class="style2">NAME:</p>
+      <p align="left" class="style2">USN:</p>
+      <table width="58%" height="161" border="0">
+      <tr>
+        <td bgcolor="#00FF00" height="157"><img src="download.jpg" /></td>
+      </tr>
+    </table></td>
+    <td width="46%" align="center" valign="top" class="style2"><p>BOOK ISSUE DETAILS </p>
+    <p>&nbsp;</p>
+    <form id="form1" name="form1" method="post" action="localhost/dashboard/issue.php">
+      <label>BOOK ID: 
+        <input type="text" name="textfield" />
+        </label>
+      <p>
+        <label>
+        <input type="submit" name="Submit" value="Submit" />
+        </label>
+        <label>
+        <input type="submit" name="Submit2" value="Reset" />
+        </label>
+      </p>
+    </form>    <p>&nbsp;</p></td>
+    <td width="30%" align="center" valign="top" class="style2"><p>BOOK RETURN DETAILS </p>
+      <table width="100%" height="212" border="0">
+        <tr>
+          <td width="57%" valign="top"><p align="right">BOOK1:</p>
+            <p align="right">&nbsp;</p>
+          <p align="right">BOOK2:</p></td>
+          <td width="43%" valign="top"><form id="form2" name="form2" method="post" action="localhost/dashboard/submit.php">
+            <label>
+            <br />
+            <input type="submit" name="Submit3" value="Submit" />
+            </label>
+          </form>          
+          <p>&nbsp;</p>
+          <form id="form3" name="form3" method="post" action="localhost/dashboard/submit2.php">
+            <label>
+              <input type="submit" name="Submit4" value="Submit" />
+              </label>
+          </form>          <p>&nbsp;</p></td>
+        </tr>
+      </table>      
+      <table width="100%" height="52" border="0">
+        <tr>
+          <td width="68%" height="48" valign="top"><div align="right">FINE AMOUNT= Rs. </div></td>
+          <td width="32%" valign="top"><div align="left">20</div></td>
+        </tr>
+      </table>      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
